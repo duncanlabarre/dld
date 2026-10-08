@@ -10,6 +10,7 @@ html, body {
   --pastel-green: #C0D9C2;
   --pastel-orange: #FEF3EB;
   --pastel-pink: #FFF4F7;
+  --pink: #FF91B3;
   --mp: 4rem;
   --intro: clamp(1.25rem, 2.25vw, 1.675rem);
   --main: clamp(1.05rem, 2vw, 1.4rem);
@@ -128,7 +129,7 @@ h3::before {
 
 .container-full {
   width: 88%;
-  max-width: 1300px;
+  max-width: 1270px;
   margin: 0 auto;
 }
 
@@ -191,9 +192,59 @@ h3::before {
   margin-top: 5rem;
 }
 
+/* POPOVERS */
 
+.popover-resets {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: unset;
+}
 
+.popover-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #122b3df5;
+  padding: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+  position: relative;
+}
 
+.close-popover {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: var(--black);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.close-popover:hover {
+  scale: 1.15;
+  cursor: pointer;
+}
+
+.popover-video {
+  width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popover-video iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  max-height: 90vh;
+}
 
 /* FOOTER */
 
