@@ -197,7 +197,7 @@
 
 .carousel { overflow: hidden; width: 100%; touch-action: pan-y; user-select: none; }
 .track { display: flex; transition: transform 2s ease; }
-.slide { flex: 0 0 100%; }
+.slide { flex: 0 0 calc(100% / var(--per-view, 1)); } /* --per-view = blocks on screen at once */
 
 .indicators { 
     display: flex;
@@ -490,6 +490,126 @@
 }
 
 
+/* VOICES */
+
+.voices-wrapper {
+    margin-top: var(--mp);
+}
+
+.voices-carousel {
+    --per-view: 3; 
+    margin-top: 1.5rem;
+    padding-bottom: 0.75rem; 
+}
+
+.voices-carousel .track {
+    transition-duration: 0.8s;
+}
+
+.voice {
+    cursor: grab;
+    background-image: url(https://duncanlabarre.github.io/dld/wp-content/themes/dld/images/voices-background.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2.5rem;
+    position: relative;
+    color: var(--grey);
+    aspect-ratio: 4/3;
+}
+
+.voices-carousel .slide {
+    padding-right: 1rem;
+    box-sizing: border-box; 
+}
+
+.voice-quote {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+}
+
+.voice-who {
+    position: absolute;
+    width: calc(100% - 2.5rem);
+    left: 2.5rem;
+    bottom: -4rem;
+}
+
+.voice-who img {
+    max-width: 10rem;
+}
+
+.voice-name,
+.voice-role {
+    display: block;
+}
+
+.voice-name {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.voice-role {
+    max-width: calc(100% - 8rem);
+}
+
+.voice-play {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 1rem;
+    color: var(--black);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.voice-play i {
+    font-size: 3rem;
+    vertical-align: middle;
+    transition: all 0.15s ease;
+}
+
+.voice-play-area button:hover i {
+    scale: 1.15;
+    color: white;
+}
+
+.voice-play:hover i {
+    color: var(--blue);
+}
+
+.voices-indicators {
+    position: static;
+    width: 100%;
+    margin-top: 10rem;
+    max-width: 16rem;
+}
+
+.voices-indicators div {
+    background: rgba(18, 43, 61, 0.2);
+}
+
+.voices-indicators .active {
+    background: var(--black);
+}
+
+.voice-play-area {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.voice-play-area button {
+    position: absolute;
+    bottom: 2.5rem;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    color: var(--blue); 
+    transition: all 0.2s ease;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 1350px) {
@@ -551,6 +671,10 @@
         object-fit: cover;
     }
 
+    .voices-carousel {
+        --per-view: 2;
+    }
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -598,6 +722,10 @@
         top: unset;
         bottom:0;
         position: absolute;
+    }
+
+    .voice {
+        aspect-ratio: 1;
     }
 
 }
@@ -689,6 +817,16 @@
     .skyline {
         aspect-ratio: 1;
         object-fit: cover;
+    }
+
+    .voices-carousel {
+        --per-view: 1;
+    }
+
+    .voice-who img {
+        max-width: 100%;
+        width: clamp(1.5rem, 40vw, 20rem);;
+        
     }
 
 }
