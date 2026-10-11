@@ -136,10 +136,41 @@
     height: 30rem;
     z-index: 10;
     max-width: 840px;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.welcome-header-blue-hero.closed {
+    transform: translateX(-100vw);
+    opacity: 0;
+    visibility: hidden; 
+    transition: transform 1s ease, opacity 1s ease, visibility 0s 1s;
 }
 
 .welcome-header, .welcome-container {
     max-width: 1260px;
+}
+
+.welcome-close {
+    position: absolute;
+    z-index: 5;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid 2px var(--black);
+    color: var(--black);
+    font-size: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.welcome-close:hover {
+    background-color: var(--black);
+    color: var(--blue);
 }
 
 .welcome-container {
@@ -610,6 +641,122 @@
     transition: all 0.2s ease;
 }
 
+/* JOURNEY */
+
+.journey {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    height: 80svh;
+    margin-top: 10rem;
+    min-height: 50rem;
+    --journey-gap: 5rem;
+}
+
+.journey h2 {
+    font-size: var(--smaller-h2);
+    margin-left: var(--journey-gap);
+}
+
+.journey h3 {
+    margin-left: var(--journey-gap);
+}
+
+.journey p {
+    font-size: var(--main);
+    margin-top: 2rem;
+    max-width: 30rem;
+    margin-left: var(--journey-gap);
+}
+
+.journey-stage {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.journey-shape {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 150%;
+    clip-path: polygon(46% 55%, 100% 16%, 100% 0, 0 0, 0 18%);
+    transition: fill 0.8s ease;
+}
+
+.journey-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.8s ease;
+    margin-top: var(--mp);
+}
+
+.journey-panel.active {
+    transform: translateX(0);
+}
+
+.journey-nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-top: 1rem;
+}
+
+.journey-tab {
+    border: none;
+    background: none;
+    padding: 0.25rem 0;
+    font-size: 1.2rem;
+    color: var(--black);
+    opacity: 0.4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Avenir-black';
+    font-size: 1.9rem;
+    color: var(--orange);
+}
+
+.journey-tab:hover {
+    opacity: 0.6;
+}
+
+.journey-tab.active {
+    opacity: 1;
+    font-size: 3.85rem;
+}
+
+.journey-content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.journey-content-wrapper {
+    position: relative;
+}
+
+.journey-content-number {
+    position: absolute;
+    top: -10rem;
+    left: 0;
+    z-index: 1;
+    font-size: 15rem;
+    font-family: 'Avenir-black';
+}
+
+.journey-content-main {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 1350px) {
@@ -673,6 +820,14 @@
 
     .voices-carousel {
         --per-view: 2;
+    }
+
+    .journey-content {
+        gap: 0rem;
+    }
+
+    .journey {
+        --journey-gap: 2.5rem;
     }
 
 }
@@ -825,8 +980,49 @@
 
     .voice-who img {
         max-width: 100%;
-        width: clamp(1.5rem, 40vw, 20rem);;
-        
+        width: clamp(1.5rem, 40vw, 20rem);
+    }
+
+    .journey {
+        --journey-gap: 0;
+        margin-top: 5rem;
+    }
+
+    .journey-panel {
+        display: block;
+    }
+
+    .journey-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .journey-content img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+
+    .journey-content-number {
+        top: 0;
+        opacity: 0.8;
+    }
+
+    .journey p {
+        max-width: 100%;
+    }
+
+    .journey {
+        height: 40vh;
+        height: 40svh;
+        min-height: 44rem;
+    }
+
+    .journey-shape {
+        clip-path: polygon(75% 40%, 110% 16%, 100% 0, 0 0, 0 18%);
+    }
+
+    .welcome-close {
+        display: none;
     }
 
 }
@@ -854,4 +1050,28 @@
         max-width: 100%;
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
+
+    .london-links a {
+        margin: 0rem 4rem 0 0;
+        text-align: left;
+    }
+
+    .london-links .page-cta span {
+        width: 7rem;
+        display: block;
+    }
+
+    .london-links .page-cta i {
+        transform: translate(0px, 0px);
+    }
+
+    .london-links {
+        grid-template-columns: 7rem auto;
+        gap: 20vw;
+    }
+
+    .voices-wrapper {
+        margin-top: 0;
+    }
+    
 }

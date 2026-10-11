@@ -11,6 +11,7 @@ html, body {
   --pastel-orange: #FEF3EB;
   --pastel-pink: #FFF4F7;
   --pink: #FF91B3;
+  --orange: #FFC35E;
   --mp: 4rem;
   --intro: clamp(1.25rem, 2.25vw, 1.675rem);
   --main: clamp(1.05rem, 2vw, 1.4rem);
@@ -23,6 +24,15 @@ html, body {
 	font-weight: 400;
 	font-display: swap;
   src: url(https://duncanlabarre.github.io/dld/wp-content/themes/dld/fonts/AvenirLTProBook.woff2) format("woff2"),
+	url(https://duncanlabarre.github.io/dld/wp-content/themes/dld/fonts/avenir-light.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Avenir-Black';
+  font-style:  normal;
+	font-weight: 400;
+	font-display: swap;
+  src: url(https://duncanlabarre.github.io/dld/wp-content/themes/dld/fonts/avenir-black.woff2) format("woff2"),
 	url(https://duncanlabarre.github.io/dld/wp-content/themes/dld/fonts/avenir-light.woff) format("woff");
 }
 
@@ -147,13 +157,22 @@ h3::before {
 }
 
 .fixed-top {
-  width: 7rem;
-  background-color: limegreen;
+  background-color: #63D743;
   position: fixed;
   z-index: 20;
   top: 0;
   right: 0;
-  height: 10rem;
+  padding: 1.25rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease;
+}
+
+.fixed-top:hover {
+  padding: 1.25rem 1.75rem 1.25rem 1.25rem;
+  color: var(--black);
 }
 
 .fixed-follow {
@@ -424,5 +443,14 @@ footer .top-logo {
   .footer-socials {
     gap: 3.5vw;
     margin-left: auto;
+  }
+
+  .fixed-top {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .fixed-top:hover {
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
   }
 }
