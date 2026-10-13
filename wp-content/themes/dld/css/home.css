@@ -753,8 +753,15 @@
     z-index: 2;
 }
 
+/* APPLY NOW */
 
+#apply {
+    padding: var(--mp) 0;
+}
 
+#apply iframe {
+    min-height: 44rem;
+}
 
 
 /* MEDIA QUERIES */

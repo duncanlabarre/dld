@@ -1,6 +1,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -429,9 +430,15 @@ footer .top-logo {
     padding-top: 0;
   }
 
-   .footer-links-box:nth-last-child(1) {
+  .footer-links-box:nth-last-child(1) {
     border-bottom: 0;
-   }
+  }
+
+  #apply iframe {
+    min-height: 90vh;
+    height: 90vh;
+  }
+   
 
 }
 
