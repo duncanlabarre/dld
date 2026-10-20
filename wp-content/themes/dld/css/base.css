@@ -16,7 +16,7 @@ html, body {
   --mp: 4rem;
   --intro: clamp(1.25rem, 2.25vw, 1.675rem);
   --main: clamp(1.05rem, 2vw, 1.4rem);
-  --smaller-h2: clamp(2.5rem, 9vw, 4.3rem);
+  --smaller-h2: clamp(2.5rem, 9vw, 3.8rem);
 }
 
 @font-face {
@@ -433,12 +433,6 @@ footer .top-logo {
   .footer-links-box:nth-last-child(1) {
     border-bottom: 0;
   }
-
-  #apply iframe {
-    min-height: 90vh;
-    height: 90vh;
-  }
-   
 
 }
 
