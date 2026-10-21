@@ -11,7 +11,7 @@
     z-index: 3;
     top: 3.75rem;
     left: 3rem;
-    width: 11.25rem;
+    width: 15rem;
     transition: all 0.1s ease;
 }
 
@@ -429,7 +429,7 @@
 .community-grid-copy h2 {
     font-size: 1.9rem;
     color: white;
-    padding-top: 13.5rem;
+    padding-top: 14.5rem;
     transition: all 0.5s ease;
 }
 
@@ -988,7 +988,7 @@
 
 @media only screen and (max-width: 768px) {
     .top-logo {
-        width: 30vw;
+        width: 40vw;
         top: 4%;
         left: 4%;
     }
