@@ -280,8 +280,8 @@
 }
 
 .choose-college {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     column-gap: 1rem;
     row-gap: 2rem;
@@ -309,6 +309,7 @@
     position: relative;
     width: 100%;
     max-width: 24rem;
+    z-index: 10;
 }
 
 .choose-pic-img {
@@ -340,6 +341,22 @@
 }
 
 .choose-pic:hover .college-name {
+    opacity: 1;
+}
+
+.college-desc {
+    text-align: center;
+    margin-top: -10rem;
+    position: relative;
+    z-index: 9;
+    font-size: 1.05rem;
+    color: var(--black);
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.choose-college-box:hover .college-desc {
+    margin-top: 1rem;
     opacity: 1;
 }
   
@@ -864,10 +881,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-
-@media only screen and (max-width: 1150px) {
     .london-box .container-mid:has(.london-intro) {
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -965,6 +978,28 @@
 
     .voice {
         aspect-ratio: 1;
+    }
+
+    .choose-college {
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 2.5rem;
+    }
+
+    .choose-college-box {
+        display: grid;
+        place-items: center;
+    }
+
+    .college-desc {
+        margin-top: 1rem;
+        opacity: 1;
+        max-width: 30rem;
+    }
+
+    .choose-pic {
+        width: 20rem;
+        max-width: 20rem;
     }
 
 }
